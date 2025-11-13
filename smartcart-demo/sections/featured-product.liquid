@@ -1,0 +1,46 @@
+<section class="featured-products">
+  <h2>Featured Products</h2>
+  <ul class="product-list">
+    {% for product in collections.frontpage.products %}
+      <li class="product-item">
+        <a href="{{ product.url }}">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" />
+          {% endif %}
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </li>
+    {% else %}
+      <p>No featured products available.</p>
+    {% endfor %}
+  </ul>
+</section>
+
+<style>
+  .featured-products {
+    padding: 1rem;
+  }
+  .product-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+  }
+  .product-item {
+    flex: 1 1 calc(25% - 1rem);
+    box-sizing: border-box;
+  }
+  .product-item img {
+    max-width: 100%;
+  }
+  .product-item h3 {
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+  }
+  .product-item p {
+    margin: 0;
+    color: #555;
+  }
+</style>

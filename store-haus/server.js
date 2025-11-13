@@ -108,7 +108,7 @@ app.post('/recommend', async (req, res) => {
   const cart = req.body.cart;
 
   console.log(cart);
-  console.clear();
+  // console.clear();
   console.log("catalog: ");
   console.log(catalog);
 

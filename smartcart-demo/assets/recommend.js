@@ -2,7 +2,7 @@
 
 async function fetchRecommendations(cart, catalog) {
   try {
-    const res = await fetch('http://localhost:5000/recommend', {
+    const res = await fetch(https://storehaus.onrender.com/recommend', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ cart, catalog })
